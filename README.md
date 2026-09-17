@@ -1,138 +1,107 @@
 # elec5305-project-540800355
 # ELEC5305 Project
 
-## Detection and Classification of Power Quality Disturbances Using Time-Frequency Signal Analysis and Machine Learning
+# ELEC5305 Project
 
-This project develops a signal-processing-based system for detecting and classifying common power quality disturbances from voltage waveforms.
+## Power Quality Disturbance Detection and Classification
 
-The project is completed as part of **ELEC5305**.
+This project was developed for **ELEC5305**.
 
-## Project Overview
+The aim is to analyse and classify common power quality disturbances using signal processing and machine learning techniques.
 
-Power quality disturbances can affect the reliable operation of electrical equipment, industrial systems, and sensitive electronic loads.
+## Signal Classes
 
-This project investigates six types of power quality signals:
+Six types of power quality signals are considered:
 
-* Normal voltage
-* Voltage sag
-* Voltage swell
-* Voltage interruption
-* Harmonic distortion
-* Transient disturbance
+- Normal
+- Voltage Sag
+- Voltage Swell
+- Interruption
+- Harmonics
+- Transient
 
-The signals are generated using mathematical models based on a 50 Hz fundamental power frequency.
+## Methods
 
-## Methodology
+The project uses:
 
-The project applies several digital signal processing techniques to analyse power quality disturbances.
+- Fast Fourier Transform (FFT)
+- Short-Time Fourier Transform (STFT)
+- Discrete Wavelet Transform (DWT)
+- Feature extraction
+- Machine learning classification
+- SNR robustness analysis
 
-### 1. Signal Generation
-
-Six types of voltage signals are generated using Python:
-
-* Normal
-* Voltage Sag
-* Voltage Swell
-* Interruption
-* Harmonics
-* Transient
-
-The sampling frequency is 6400 Hz and the fundamental power frequency is 50 Hz.
-
-### 2. FFT Analysis
-
-Fast Fourier Transform (FFT) is used to analyse the frequency components of each power quality signal.
-
-For the harmonic disturbance, the signal contains:
-
-* 50 Hz fundamental frequency
-* 150 Hz third harmonic
-* 250 Hz fifth harmonic
-
-FFT analysis allows these harmonic components to be clearly identified in the frequency domain.
-
-### 3. STFT Analysis
-
-Short-Time Fourier Transform (STFT) will be used to analyse how the frequency components change over time.
-
-This method is particularly useful for analysing short-duration and non-stationary disturbances.
-
-### 4. Wavelet Analysis
-
-Discrete Wavelet Transform (DWT) will be used to extract multi-resolution time-frequency features from the signals.
-
-### 5. Machine Learning Classification
-
-Features extracted from FFT, STFT and DWT will be used to train machine learning classifiers including:
-
-* Support Vector Machine (SVM)
-* Random Forest
-
-The classification performance will be evaluated using:
-
-* Accuracy
-* Precision
-* Recall
-* F1-score
-* Confusion Matrix
-
-Noise robustness will also be investigated under different signal-to-noise ratio conditions.
-
-## Project Structure
+## Repository Structure
 
 ```text
-ELEC5305 Project
-│
-├── README.md
-├── ELEC5305_Project_Proposal.pdf
-├── requirements.txt
-│
-├── src
-│   ├── signal_generation.py
-│   └── fft_analysis.py
-│
-├── data
-│   └── power_quality_signals.csv
-│
-└── results
-    ├── waveforms
-    └── fft
+data/
+results/
+
+ELEC5305_Project_Proposal_Power_Quality.pdf
+README.md
+
+signal_generation.py
+fft_analysis.py
+stft_analysis.py
+dwt_analysis.py
+feature_extraction.py
+classification.py
+snr_experiment.py
 ```
 
-## Current Progress
+## File Description
 
-Completed:
+### `signal_generation.py`
 
-* Power quality signal generation
-* Six disturbance waveform visualisations
-* FFT analysis
-* FFT spectrum visualisations
+Generates the six power quality signal classes and saves the signal data.
 
-In progress:
+### `fft_analysis.py`
 
-* STFT analysis
-* DWT analysis
-* Feature extraction
-* SVM classification
-* Random Forest classification
-* Noise robustness analysis
+Performs FFT analysis and generates frequency spectra.
 
-## Software
+### `stft_analysis.py`
 
-The project is implemented using Python.
+Performs STFT analysis and generates time-frequency spectrograms.
 
-Main libraries:
+### `dwt_analysis.py`
 
-```text
-NumPy
-Pandas
-Matplotlib
-SciPy
-PyWavelets
-Scikit-learn
-```
+Performs discrete wavelet transform analysis.
 
-## Installation
+### `feature_extraction.py`
+
+Extracts numerical signal features for classification.
+
+### `classification.py`
+
+Performs machine learning classification and evaluates:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+### `snr_experiment.py`
+
+Evaluates classification performance under different noise levels.
+
+## Data
+
+The `data/` folder contains the generated signal data and extracted features used for analysis and classification.
+
+## Results
+
+The `results/` folder contains:
+
+- Signal waveform figures
+- FFT results
+- STFT results
+- DWT results
+- Classification results
+- Confusion matrix
+- SNR experiment results
+
+## Requirements
 
 Install the required Python packages using:
 
@@ -140,26 +109,32 @@ Install the required Python packages using:
 pip install numpy pandas matplotlib scipy pywavelets scikit-learn
 ```
 
-## Running the Project
+## How to Run
 
-Generate the power quality signals:
-
-```bash
-python src/signal_generation.py
-```
-
-Run the FFT analysis:
+Run the Python files in the following order:
 
 ```bash
-python src/fft_analysis.py
+python signal_generation.py
+python fft_analysis.py
+python stft_analysis.py
+python dwt_analysis.py
+python feature_extraction.py
+python classification.py
+python snr_experiment.py
 ```
 
-## Example Results
+## Project Workflow
 
-The generated signals include normal voltage, voltage sag, voltage swell, interruption, harmonic distortion, and transient disturbances.
-
-FFT analysis is used to identify the frequency characteristics of the signals, particularly the harmonic components at 50 Hz, 150 Hz, and 250 Hz.
-
+```text
+Signal Generation
+      ↓
+FFT / STFT / DWT
+      ↓
+Feature Extraction
+      ↓
+Classification
+      ↓
+SNR Evaluation
 
 ## References
 
