@@ -1,14 +1,6 @@
 """
 ELEC5305 Project
-Feature Extraction for Power Quality Disturbance Classification
 
-This script:
-1. Generates multiple randomized samples for six signal classes
-2. Extracts time-domain, frequency-domain, STFT, and DWT features
-3. Saves the feature dataset as data/features.csv
-
-Outputs:
-    data/features.csv
 """
 
 from pathlib import Path
