@@ -1,18 +1,4 @@
-"""
-ELEC5305 Project
-Anti-Noise Experiment Under Different SNR Levels
 
-This script:
-1. Trains SVM and Random Forest on clean features
-2. Generates noisy test signals under different SNR values
-3. Evaluates Accuracy, Precision, Recall, and F1-score
-4. Saves SNR performance tables and plots
-
-Outputs:
-    results/classification/snr_experiment_metrics.csv
-    results/classification/snr_accuracy.png
-    results/classification/snr_f1.png
-"""
 
 from pathlib import Path
 import os
