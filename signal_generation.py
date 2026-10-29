@@ -1,19 +1,6 @@
 """
 ELEC5305 Project
-Power Quality Disturbance Signal Generation
 
-Generates six power-quality signal classes:
-1. Normal
-2. Voltage Sag
-3. Voltage Swell
-4. Interruption
-5. Harmonics
-6. Transient
-
-Outputs:
-- Combined waveform figure
-- Individual waveform figures
-- CSV file containing all signals
 """
 
 from pathlib import Path
