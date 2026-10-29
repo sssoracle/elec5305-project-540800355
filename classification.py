@@ -1,16 +1,6 @@
 """
 ELEC5305 Project
-SVM and Random Forest Classification
 
-This script:
-1. Reads data/features.csv
-2. Trains SVM and Random Forest classifiers
-3. Reports Accuracy, Precision, Recall, and F1-score
-4. Saves confusion matrices
-
-Outputs:
-    results/classification/classification_metrics.csv
-    results/classification/*_confusion_matrix.png
 """
 
 from pathlib import Path
